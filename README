@@ -1,0 +1,70 @@
+@COPYRIGHT 2021 Bubatu Claudiu-Mihai, 313CA
+-------------------------------------------------------------------------------
+
+   Clasa Task este "parintele" claselor: RezolvaRetele si RezolvaReclame.
+Aceste doua clase sunt folosite in clasele: Retele si Reclame pentru a
+rezolva cerintele.
+
+-------------------------------------------------------------------------------
+
+   Retele:
+
+  Am considerat o clasa care sa imi rezolve task-ul cu retele (denumita
+sugestiv: RezolvaRetele). Ea curpinde cele 4 metode:
+  - readProblemData -> citeste datele de intrare ale problemei;
+  
+  - formulateOracleQuestion -> construieste fisierul sat.cnf ce contine
+stringul "p cnf", numarul de variabile pentru fiecare clauza din formula
+finala si numarul de clauze; am folosit formulele de la reducerea din enunt;
+
+  - askOracle -> functia din schelet
+  
+  - decipherOracleAnswer -> apeland functia askOracle vom primi raspunsul
+oracolului pe prima linie in fisierul "sat.sol"; in functie de raspunsul
+oracolului, vom afla daca problema noastra are solutie; raspunsul oracolului
+trebuie interpretat astfel: daca exista o clica de dimensiune k oracolul
+va intoarce o lista cu (n * k) variabile; daca o variabila de tip x(i, j)
+este pozitiva, acest lucru ne indica faptul ca nodul i este pe a j pozitie
+in clica; pozitiile corespunzatoare sunt memorate intr-o lista si scrise
+la stdout.
+
+   Complexitate:
+   
+   - din punctul de vedere al timpului, complexitatea programului consta in
+implementarea functiei formulateOracleQuestion ce contine 4 for-uri imbricate;
+tinand cont ca k <= n, complexitatea este de O(n^4).
+
+   - din punctul de vedere al spatiului, complexitatea programului consta in
+alcoarea de memorie pentru 2 matrice (cea de adiacenta si cea a sistemului);
+
+-------------------------------------------------------------------------------
+
+   Reclame:
+   
+     Am considerat o clasa care sa imi rezolve task-ul cu retele (denumita
+sugestiv: RezolvaRetele). Ea curpinde cele 4 metode:
+   - readProblemData -> citeste datele de intrare ale problemei;
+  
+  - formulateOracleQuestion -> construieste fisierul sat.cnf ce contine
+stringul "p cnf", numarul de variabile pentru fiecare clauza din formula
+finala si numarul de clauze; am folosit formulele de la reducerea din enunt;
+
+  - askOracle -> functia din schelet
+  
+  - decipherOracleAnswer -> apeland functia askOracle vom primi raspunsul
+oracolului pe prima linie in fisierul "sat.sol"; in functie de raspunsul
+oracolului, vom afla daca problema noastra are solutie; raspunsul oracolului
+trebuie interpretat astfel: daca exista o clica de dimensiune k oracolul
+va intoarce o lista cu (n * k) variabile; daca o variabila de tip x(i, j)
+este pozitiva, acest lucru ne indica faptul ca nodul i este pe a j pozitie
+in clica; pozitiile corespunzatoare sunt memorate intr-o lista si scrise
+la stdout.
+
+   Complexitate:
+   
+   - din punctul de vedere al timpului, complexitatea programului consta in
+implementarea functiei formulateOracleQuestion ce contine 3 for-uri imbricate;
+tinand cont ca k <= n, complexitatea este de O(n^3).
+
+   - din punctul de vedere al spatiului, complexitatea programului consta in
+alcoarea de memorie pentru 2 matrice (cea de adiacenta si cea a sistemului);
